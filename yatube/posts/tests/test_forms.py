@@ -88,7 +88,10 @@ class FormsTestClass(TestCase):
             {'text': 'Текст изменил другой пользователь'}
         )
         post_edit = Post.objects.get(pk=self.post.pk)
-        self.assertNotEqual(post_edit.text, 'Текст изменил другой пользователь')
+        self.assertNotEqual(
+            post_edit.text,
+            'Текст изменил другой пользователь'
+        )
 
     def test_add_comment(self):
         """ Тест проверяет форму добавления комментария """

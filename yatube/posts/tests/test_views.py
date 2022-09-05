@@ -133,5 +133,3 @@ class PostPagesTest(TestCase):
         cache.clear()
         aft_clear = self.authorized_client.get(reverse('posts:index')).content
         self.assertNotEqual(bef_clear, aft_clear)
-
-

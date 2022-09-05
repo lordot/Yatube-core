@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 
-from ..models import User, Post, Follow
+from ..models import User, Post
 
 
 class FollowTest(TestCase):

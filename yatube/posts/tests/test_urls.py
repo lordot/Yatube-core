@@ -72,4 +72,3 @@ class PostsURLTest(TestCase):
             with self.subTest(address=address):
                 response = self.guest_client.get(address, follow=True)
                 self.assertRedirects(response, redirect)
-
