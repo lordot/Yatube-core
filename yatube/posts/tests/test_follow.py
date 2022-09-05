@@ -45,7 +45,6 @@ class FollowTest(TestCase):
         count_follows = self.user1.following.all().count()
         self.assertEqual(count_follows, 1)
 
-
     def test_follow_posts(self):
         """
         Тест проверяет наличие поста у подписавшихся
