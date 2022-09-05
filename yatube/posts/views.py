@@ -127,7 +127,7 @@ def profile_follow(request, username):
     if author != user:
         Follow.objects.create(user=user, author=author)
         return redirect('posts:profile', username=username)
-
+    return redirect('posts:profile', username=username)
 
 @login_required()
 def profile_unfollow(request, username):
