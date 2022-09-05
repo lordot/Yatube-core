@@ -4,7 +4,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from django.conf import settings
 
-
 from .forms import PostForm, CommentForm
 from .models import Group, Post, User, Follow
 
@@ -124,8 +123,9 @@ def profile_follow(request, username):
     author = get_object_or_404(User, username=username)
     user = request.user
     if author != user:
-        Follow.objects.create(user=user, author=author)
-        return redirect('posts:profile', username=username)
+        if author.following.filter(user=user.pk).exists() != True:
+            Follow.objects.create(user=user, author=author)
+            return redirect('posts:profile', username=username)
     return redirect('posts:profile', username=username)
 
 
