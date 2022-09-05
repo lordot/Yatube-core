@@ -33,11 +33,18 @@ class FollowTest(TestCase):
                     ),
         )
 
+    def test_follow_self(self):
+        """ Тест проверяет что нельзя подписаться на себя"""
+        self.follow(self.user2)
+        count_follows = self.user2.following.all().count()
+        self.assertEqual(count_follows, 0)
+
     def test_follow_author(self):
         """ Тест подписки на автора """
         self.follow(self.user1)
         count_follows = self.user1.following.all().count()
         self.assertEqual(count_follows, 1)
+
 
     def test_follow_posts(self):
         """
