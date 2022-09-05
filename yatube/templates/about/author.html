@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}
+О себе
+{% endblock title %}
+{% block content %}
+<div class="container py-5">
+  <img src="{% static 'img/desk.jpg' %}">
+  <h1>Моя история</h1>
+  <p>Привет! Меня зовут Дмитрий Воротынцев.</p>
+  <p>Я начинающий программист Python. Это довольно долгая история,
+    но идея войти в программирование была у меня очень давно.</p>
+  <p>Спасибо Яндекс за возможность реализовать мечту!</p>
+</div>
+{% endblock %}
