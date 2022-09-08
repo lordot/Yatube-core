@@ -53,7 +53,7 @@ def profile(request, username):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     comments = post.comments.select_related('author')
-    form = CommentForm(request.POST or None)
+    form = CommentForm()
     context = {
         'post': post,
         'comments': comments,
@@ -121,7 +121,6 @@ def profile_follow(request, username):
     author = get_object_or_404(User, username=username)
     if author != request.user:
         Follow.objects.get_or_create(user=request.user, author=author)
-        return redirect('posts:profile', username=username)
     return redirect('posts:profile', username=username)
 
 
