@@ -16,3 +16,9 @@ At the first start, for the project to function, it is necessary to install a vi
      $ python api_yamdb/manage.py runserver
 
 After launch, the project will be available at http://127.0.0.1:8000
+## Related
+
+Here are API for this project:
+
+[Yatube-api](https://github.com/lordot/Yatube-api)
+
