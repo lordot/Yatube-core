@@ -6,14 +6,19 @@ Yatube is a social network for personal blogging of users. Users have the abilit
 
 At the first start, for the project to function, it is necessary to install a virtual environment and perform migrations:
 
-     $ python -m venv venv
-     $ source venv/Scripts/activate
-     $ pip install -r requirements.txt
+    $ python -m venv venv
+    $ source venv/Scripts/activate
+    $ pip install -r requirements.txt
+    $ python yatube_api/manage.py makemigrations
+    $ python yatube_api/manage.py migrate
 
-    
-     $ python api_yamdb/manage.py makemigrations
-     $ python api_yamdb/manage.py migrate
-     $ python api_yamdb/manage.py runserver
+Create superuser for admin panel:
+
+    $ python yatube_api/manage.py createsuperuser
+
+Run server:
+
+    $ python yatube_api/manage.py runserver
 
 After launch, the project will be available at http://127.0.0.1:8000
 ## Related
